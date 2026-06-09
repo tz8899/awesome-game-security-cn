@@ -12,6 +12,7 @@
 - [资源分类导航](#-资源分类导航)
 - [常见使用场景](#-常见使用场景)
 - [如何贡献](#-如何贡献)
+- [Ghidra/IDA 逆向技能包](#-ghidraida-逆向技能包)
 - [免责声明](#-免责声明)
 
 ---
@@ -128,6 +129,62 @@ npx skills add gh:gmh5225/awesome-game-security
 3. 了解 ARM64 汇编基础知识
 
 ---
+
+
+---
+
+## 🤖 Ghidra/IDA 逆向技能包
+
+> 本仓库内置了专用 AI 逆向技能包，可直接在 Claude Code 中使用，实现 Ghidra / IDA Pro 深度集成。
+
+### 技能文件位置
+
+```
+skills/ghidra-ida-re/
+├── README.md   # 使用说明
+└── SKILL.md    # 技能定义（权限、能力描述）
+```
+
+### 核心能力
+
+| 功能 | 说明
+|------|------
+| 🏗️ **Ghidra 无头模式分析** | 通过 `analyzeHeadless` 自动执行批量分析
+| 🐍 **IDA Pro 脚本** | 使用 IDAPython 编写自动化逆向流程
+| 🔍 **反编译与反汇编解析** | 解析 Ghidra/IDA 的反编译输出
+| 📋 **函数签名提取** | 自动提取函数原型和调用约定
+| 📊 **调用图与数据流导出** | 导出为 JSON/XML 格式供后续分析
+| 🏷️ **自定义类型定义** | 创建和应用结构体、枚举等类型信息
+
+### 使用前提
+
+- **Ghidra**: 需要安装 Ghidra CLI（`analyzeHeadless`）+ Java Runtime
+- **IDA Pro**（可选）: 需要 IDAPython 支持
+- **Python 3.x**: 配合 ghidra_bridge 或 ghidrathon
+
+### 典型使用场景
+
+1. **批量固件分析** — 自动反编译整个固件目录，提取漏洞特征
+2. **恶意代码静态分析** — 对可疑样本进行深度逆向
+3. **协议逆向** — 从二进制中提取通信协议结构
+4. **漏洞根因分析** — 辅助定位崩溃点对应的源码位置
+5. **类型恢复** — 为 stripped binary 重建类型信息
+
+### 如何与 Claude Code 配合使用
+
+将本仓库克隆到本地后，在 Claude Code 中引用该技能：
+
+```bash
+# 在 Claude Code 中可以直接指向技能文件
+# Claude Code 会自动读取 skills/ghidra-ida-re/ 下的定义
+```
+
+配合该技能，你可以向 Claude 提问：
+
+- "帮我分析这个二进制文件的 main 函数"
+- "对这个 ELF 文件运行 Ghidra 无头分析"
+- "提取这个 DLL 的所有导出函数签名"
+- "生成调用图并找出危险函数"
 
 ## 🤝 如何贡献
 
