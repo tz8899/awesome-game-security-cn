@@ -1,8 +1,5 @@
 # 🎮 awesome-game-security 中文教程
 
-> 本项目为 [awesome-game-security](https://github.com/gmh5225/awesome-game-security) 的中文镜像站 + 教程站  
-> 原始仓库作者：**[gmh5225](https://github.com/gmh5225)** | 本仓库收集了全网最全的游戏安全相关资源
-
 ---
 
 ## 📖 目录
